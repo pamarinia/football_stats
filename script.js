@@ -114,31 +114,23 @@ async function process() {
 
         // On affiche les données du joueur
         display_player_info(player, data)
-
-        // On affiche l'histogramme
-        let selectedElement = document.getElementById('stat-select')
-        let selectedStat = selectedElement.value
+        
+        modify_histogramme(data, player)
         
         let pool_element = document.getElementById('pool-select')
-        let selectedPool = pool_element.value
-        
+        pool_element.addEventListener('change', function() {
+            modify_histogramme(data, player)
+        })
+
+        let selectedElement = document.getElementById('stat-select')
+        selectedElement.addEventListener('change', function() {
+            modify_histogramme(data, player)
+        });
+
         let div_thresholds_value = document.getElementById('thresholds_value')
-        let thresholds_value = div_thresholds_value.value
-
-        let histogramme = Histogramme(data, player, {
-            attribute : selectedStat,
-            pool_choice : selectedPool,
-            title : "Classement du joueur",
-            x_label: selectedStat,
-            thresholds_value: thresholds_value,
-            height : 400,
-            width : 500,})
-        let div_histogramme = document.getElementById('histogramme')
-
-        if (div_histogramme.hasChildNodes()) {
-            div_histogramme.removeChild(div_histogramme.firstChild);
-        } 
-        div_histogramme.appendChild(histogramme)
+        div_thresholds_value.addEventListener('change', function() {
+            modify_histogramme(data, player)
+        });
 
 
     } catch(error){
@@ -343,19 +335,28 @@ function display_player_info(playerName, data) {
 
 }
 
-let pool_element = document.getElementById('pool-select')
-pool_element.addEventListener('change', function() {
-    process()
-})
+function modify_histogramme(data, player) {
+    let selectedElement = document.getElementById('stat-select')
+    let selectedStat = selectedElement.value
+    let pool_element = document.getElementById('pool-select')
+    let selectedPool = pool_element.value
+    let div_thresholds_value = document.getElementById('thresholds_value')
+    let thresholds_value = div_thresholds_value.value
+    let histogramme = Histogramme(data, player, {
+        attribute : selectedStat,
+        pool_choice : selectedPool,
+        title : "Classement du joueur",
+        x_label: selectedStat,
+        thresholds_value: thresholds_value,
+        height : 400,
+        width : 500,
+    })
 
-let selectedElement = document.getElementById('stat-select')
-selectedElement.addEventListener('change', function() {
-    process()
-});
-
-let div_thresholds_value = document.getElementById('thresholds_value')
-div_thresholds_value.addEventListener('change', function() {
-    process()
-});
+    let div_histogramme = document.getElementById('histogramme')
+    while (div_histogramme.firstChild) {
+        div_histogramme.removeChild(div_histogramme.firstChild);
+    }
+    div_histogramme.appendChild(histogramme)
+}
 
 
