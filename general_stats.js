@@ -8,7 +8,6 @@ export function general_stats(data,Player) {
       "Défense":parseFloat(player["TklDri%"])+parseFloat(player["TklWon"]),
       "Vista":parseFloat(player["AerWon%"])+parseFloat(player["ScaPassLive"]),
     };
-    console.log(general_stats)
     const general_stats_details={
       "Technique":{
         'Dribbles réussis':player['ToSuc'],
