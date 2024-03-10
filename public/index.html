@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistiques Football 2022-2023</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script type="module" src="script.js"></script>
+</head>
+
+<body>
+    <div class="title">
+      <h1>Statistiques Football 2022-2023</h1>
+    </div>
+   
+    <div class="container">
+      <div class="card">
+        <div class="league-team-choice">
+          <div class="team-logo"></div>
+          <div class="league-team-selector">
+            <div id="selector-team-left" class="selector-left">
+              <img src="data/fleche.png">
+            </div>
+            <div class="team-name"></div>
+            <div id="selector-team-right" class="selector-right">
+              <img src="data/fleche.png">
+            </div>
+          </div>
+        </div>
+               
+        <div class="league-team-choice"> 
+          <div class="league-logo"></div>
+          <div class="league-team-selector">
+            <div id="selector-league-left" class="selector-left">
+              <img src="data/fleche.png">
+            </div>
+            <div class="league-name"></div>
+            <div id="selector-league-right" class="selector-right">
+              <img src="data/fleche.png">
+            </div>
+          </div>
+        </div> 
+      </div>
+        
+      <div class="card">
+        <div class="player-photo">
+          <img src="data/mbappe.png">
+        </div>
+        <div class="player-info">
+          <div class="player-name"></div>
+          <ul class="player-general-info">
+            <li>Age :</strong></li>
+            <li>Origine :</li>
+            <li>Taille :</li>
+          </ul>
+          <ul class="player-stats-info">
+            <li>Buts : </strong></li>
+            <li>Passes décisives :</li>
+            <li>Matchs jouées :</li>
+          </ul>
+        </div>
+        <button id="info_button_more">PLUS</button>
+      </div>
+    
+      <div class="card">
+        <div class="scroll-box">
+          <ul class="player-choice"></ul>
+        </div>
+      </div>
+    
+    </div>
+
+    <div id="container_extended">
+      <div class="card_extended">
+        <div id="team_player_photo">
+          <div class="team-logo_ext"></div>
+          <div class="player-photo">
+            <img src="data/mbappe.png">
+          </div>
+
+        </div>
+        <div class="player-info">
+          <div class="player-name_ext"></div>
+          <ul class="player-general-info_ext">
+            <li>Age :</li>
+            <li>Origine :</li>
+            <li>Taille :</li>
+          </ul>
+          <ul class="player-stats-info_ext">
+            <li>Buts : </strong></li>
+            <li>Passes décisives :</li>
+            <li>Matchs jouées :</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card_extended">
+        <div class="slider">
+          <div class="slide" id="slide1">Slide 1</div>
+          <div class="slide" id="slide2">Slide 2</div>
+          <div class="slide" id="slide3">Slide 3</div>
+          <!-- Ajoutez autant de slides que vous voulez -->
+        </div>
+        <div>
+          <button id="prev">Précédent</button>
+          <button id="info_button_less">MOINS</button>
+          <button id="next">Suivant</button>
+        </div>
+      </div>
+      <div class="card_extended">
+        <div id="graphe_general_stats"></div>
+      </div>
+    </div>
+
+    <div class="container-histo">
+      <div id="histo-select">
+        <div id="div_stat_select">
+          <label for="stat-select">Choisissez une statistique :</label><br>
+          <select name="stats" id="stat-select">
+            <option value="Age" selected>Age</option>
+            <option value="MP">Nombre de matchs joués</option>
+            <option value="Goals">Nombre de buts</option>
+          </select>
+        </div>
+        <div id="div_pool_select">
+          <label for="pool-select">Avec qui le comparer :</label><br>
+          <select name="stats" id="pool-select">
+            <option value=None selected>Tout les joueurs</option>
+            <option value="Pos" selected>Même poste</option>
+            <option value="Squad">Même équipe</option>
+            <option value="Comp">Même ligue</option>
+          </select>
+        </div>
+        <div id="div_thresholds_select">
+          <label for="thresholds_value">Choix du thresholds_value</label><br>
+          <input type="range" id="thresholds_value" min="5" max="30" step="1" value="1">
+        </div>
+      </div>
+      
+      <div id="histogramme"></div>
+    </div>
+    <div id="source"> Source : https://www.kaggle.com/datasets/vivovinco/20222023-football-player-stats</div>
+
+</body>
+</html>

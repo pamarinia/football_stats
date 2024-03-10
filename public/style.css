@@ -1,0 +1,299 @@
+
+body{
+    font-family: 'Tahoma';
+    /*background-image: url('data/fond.jpg');*/
+    background-color: rgb(23, 44, 61);
+    background-size: 20%;  /* Pour s'assurer que l'image couvre tout le fond */
+    background-repeat: repeat;  /* Pour éviter que l'image ne se répète */
+}
+
+.title{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 7px solid white;
+    border-bottom: 7px solid white;
+}
+
+.title h1 {
+    color: white;
+    font-size: 3em;
+    margin: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.card {
+    background:  rgb(177, 199, 219);
+    padding: 20px;
+    text-align: center;
+    width: 25%;
+    height: 400px;
+    border-radius: 8px;
+}
+
+/* league & team choice*/
+.league-team-choice{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Cette propriété aligne les enfants flex verticalement au centre */
+    justify-content: center; /* Cette propriété aligne les enfants flex horizontalement au centre */
+}
+
+.league-team-selector{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.team-logo img{
+    height: 150px;
+    background-size: contain;
+}
+
+.league-logo img {
+    height: 100px;
+    background-size: contain;
+}
+
+.team-name {
+    width: 80%!important;
+    justify-content: center; 
+    font-size: 1.5em;
+}
+
+.league-name {
+    width: 80%!important;
+    justify-content: center; 
+    font-size: 1.5em;
+}
+
+.selector-left{
+    width: 10% !important;
+    height: 15px !important;
+}
+
+.selector-left img{
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    transform: rotate(90deg); 
+    transform-origin: center;
+}
+
+.selector-right{
+    width:  10%  !important;
+    height: 15px !important;
+}
+
+.selector-right img{
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    transform: rotate(270deg); 
+    transform-origin: center;
+}
+
+/* player info*/
+.player-photo img{
+    height: 150px;
+    background-size: cover;
+    border-radius: 8px;
+}
+
+.team-logo, .player-photo {
+    background-size: contain;
+    margin: auto;
+}
+
+.player-info {
+    list-style: none;
+    margin: 10px;
+    padding: 0;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.player-info div {
+    margin: 0px 10px;
+    padding: 10px;
+    border-bottom: 1px solid rgb(234, 227, 227);
+}
+
+.player-info ul {
+    margin: 0px 10px;
+    padding: 10px ;
+    list-style-type: none;
+}
+
+.player-general-info{
+    border-bottom: 1px solid rgb(234, 227, 227);
+}
+
+#info_button_more{
+    height: 30px;
+    width : 100px;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: white;
+    border: none;
+    cursor: pointer; 
+}
+#info_button_less{
+    height: 30px;
+    width : 100px;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: white;
+    border: none;
+    cursor: pointer; 
+}
+
+.info_button:hover {
+    background-color: rgb(189, 180, 180) !important; /* Couleur de fond au survol */
+}
+
+/* player choice*/
+.player-choice {
+    list-style: none;
+    padding: 0px;
+}
+
+.scroll-box {
+    width: 100%; /* Largeur de la boîte */
+    height: 100%; /* Hauteur maximale de la boîte */
+    overflow-y: scroll; /* Active le défilement vertical si le contenu dépasse la hauteur */
+}
+
+.player-choice li {
+    margin: 10px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: white;
+    transition: background-color 0.5s; /* Transition douce de la couleur de fond */
+    display: flex;
+    align-items: center; /* Cette propriété aligne les enfants flex verticalement au centre */
+    justify-content: center; /* Cette propriété aligne les enfants flex horizontalement au centre */
+    cursor: pointer;
+}
+
+.player-choice li:hover {
+    background-color: rgb(189, 180, 180) !important; /* Couleur de fond au survol */
+}
+
+/* Player info extended */
+#container_extended{
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 95%; 
+    height: 400px;
+    
+    margin: 20px;
+    padding: 10px;
+    background: rgb(177, 199, 219);
+    border-radius: 8px;
+    text-align: center;
+
+} 
+.card_extended {
+
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 25%;
+    height: 350px;
+    
+}
+
+#team_player_photo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.team-logo_ext img{
+    height: 130px;
+    background-size: contain;
+    border-radius: 8px;
+}
+.player-photo img{
+    height: 130px;
+    background-size: contain;
+    border-radius: 8px;
+}
+.container-histo {
+    display: flex;
+    width: 800px;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    padding: 10px;
+    background: rgb(177, 199, 219);
+    text-align: center;
+    border-radius: 8px;
+}
+
+#div_stat_select {
+    padding: 20px;
+}
+
+#div_pool_select {
+    padding: 20px;
+}
+
+#div_thresholds_select {
+    padding: 20px;
+}
+
+.slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* Permet un défilement fluide et s'arrête à chaque slide */
+    width: 100%;
+  }
+  
+  .slide {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    /*flex: 0 0 auto; /* Empêche les slides de se redimensionner */
+    width: 100%; /* Assure que chaque slide a la largeur de la fenêtre */
+    scroll-snap-align: start; /* Alignement des slides lors du défilement */
+  }
+
+#next {
+    margin-left: 30px;
+    border-radius: 4px;
+    background-color: white;
+    border: none;
+    cursor: pointer; 
+}
+#prev {
+    margin-right: 30px;
+    border-radius: 4px;
+    background-color: white;
+    border: none;
+    cursor: pointer; 
+}
+
+#graphe_general_stats{
+    margin-top: 10%;
+}
+
+#source {
+    margin-top:20px;
+    margin-left:20px ;
+    color: white;
+}
