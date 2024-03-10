@@ -19,7 +19,6 @@ async function process() {
         if (!data) {
             data = await d3.dsv(";", "data/football_stat.csv")
         }
-        console.log(data)
         // On récupère les ligues 
         list_leagues = getListeLigues(data);
         // On affiche le nom de la ligue
@@ -116,7 +115,7 @@ async function process() {
         display_player_info(player, data)
         
         modify_histogramme(data, player)
-        
+
         let pool_element = document.getElementById('pool-select')
         pool_element.addEventListener('change', function() {
             modify_histogramme(data, player)
@@ -246,7 +245,6 @@ document.getElementById('info_button_less').addEventListener('click', less_info)
 
 // on récupere la largeur
 var slider_ = document.querySelector('.slider');
-console.log(slider_.style.width)
 document.getElementById('prev').addEventListener('click', function() {
     var slider_witdh = document.querySelector('.slider').clientWidth;
     document.querySelector('.slider').scrollBy({ left: -slider_witdh, behavior: 'smooth' });
